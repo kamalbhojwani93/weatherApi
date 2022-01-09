@@ -1,19 +1,44 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Console\Commands;
 
+use Illuminate\Console\Command;
 use Illuminate\Http\Request;
 use Stevebauman\Location\Facades\Location;
 use App\Models\Weather;
 
-class WeatherController extends Controller
+class WeatherUpdate extends Command
 {
     /**
-     * Display a listing of the resource.
+     * The name and signature of the console command.
      *
-     * @return \Illuminate\Http\Response
+     * @var string
      */
-    public function index()
+    protected $signature = 'weather:update';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Command description';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle() 
     {
         $cityName = 'Jaipur';
         $countryCode = 'In';

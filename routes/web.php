@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('weather-listing');
+
+// get weather data from db
+Route::get('/weather/ajax/list', 'App\Http\Controllers\HomeController@ajaxlist')->name('weather.ajax.list');
 
 // Get weather data
 Route::get('/get-weather-data', 'App\Http\Controllers\WeatherController@index')->name('get-weather-data');
