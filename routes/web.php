@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Get weather data
+Route::get('/get-weather-data', 'App\Http\Controllers\WeatherController@index')->name('get-weather-data');
